@@ -21,7 +21,8 @@ defmodule PlugRecaptcha.Mixfile do
   def deps do
     [{:plug, "~> 1.3"},
      {:httpoison, "~> 0.11.1"},
-     {:poison, "~> 3.1"}]
+     {:poison, "~> 3.1"},
+     {:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
   defp description do
