@@ -7,16 +7,34 @@ defmodule PlugRecaptcha.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     description: description(),
+     package: package(),
+     deps: deps(),
+     name: "plug_recaptcha",
+     source_url: "https://github.com/alicanerdogan/plug_recaptcha"]
   end
 
   def application do
-    [extra_applications: [:logger]]
+    []
   end
 
   def deps do
     [{:plug, "~> 1.3"},
      {:httpoison, "~> 0.11.1"},
      {:poison, "~> 3.1"}]
+  end
+
+  defp description do
+    """
+    Plug module for Recaptcha needs Edit
+    """
+  end
+
+  defp package do
+    [name: :plug_recaptcha,
+     files: ["lib", "mix.exs", "README.md", "LICENSE"],
+     maintainers: ["Alican Erdogan"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/alicanerdogan/plug_recaptcha"}]
   end
 end
