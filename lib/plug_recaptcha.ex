@@ -3,7 +3,7 @@ defmodule PlugRecaptcha do
 
   def init(default), do: default
 
-  def call(conn, %{:recaptcha_secret => secret}) do
+  def call(conn, [recaptcha_secret: secret]) do
     case conn do
       %Plug.Conn{params: %{"signature" => signature}} ->
         case verify_signature(signature, secret) do
